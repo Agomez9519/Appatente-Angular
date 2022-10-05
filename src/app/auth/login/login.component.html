@@ -1,0 +1,25 @@
+<div class="login-form">
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>     
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> 
+                <mat-form-field class="full-width-input separator" color="accent">
+                   <mat-label>Email</mat-label>
+                     <input matInput type="email" formControlName="username" required [class]="isValidField('username')">
+                     <mat-error *ngIf="loginForm.get('username')?.errors">Nombre es requerido</mat-error>
+                </mat-form-field> 
+                
+                <mat-form-field class="full-width-input separator" color="accent">
+                   <mat-label>Password</mat-label>
+                     <input matInput [type]="hide? 'password': 'text'" formControlName="password" required [class]="isValidField('password')" />
+                     <button type="button" mat-icon-button matSuffix (click)="hide=!hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                     </button>
+                     <mat-error *ngIf="loginForm.get('password')?.errors">Password es requerido</mat-error>
+                    </mat-form-field> 
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Ingresar</button>
+            </form>
+        </mat-card-content>     
+   
+    </mat-card>
+</div>

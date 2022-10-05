@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    
+    <span class="exaple-spacer"></span>
+
+    <!--Si esta logeado, se imprimira el email-->
+    <p class="email" *ngIf="isLoged|async;"> {{email}}</p>
+
+    <a *ngIf="isLoged|async; else viewLogout" mat-icon-button (click)="onLogout()">
+        <mat-icon ><span class="material-symbols-outlined">logout</span></mat-icon>
+    </a>
+
+    <ng-template #viewLogout>           
+        <a mat-icon-button [routerLink]="'./login'">
+            <mat-icon ><span class="material-symbols-outlined">account_circle</span></mat-icon>
+        </a>
+    </ng-template>
+
+
+
+</mat-toolbar>

@@ -2,8 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//ALMACENA LA URL DE LA API
 export const environment = {
-  production: false
+  production: false,
+  api : 'https://es.wikipedia.org/w/api.php',
+  baseUrl:'http://localhost:3000/'
 };
 
 /*

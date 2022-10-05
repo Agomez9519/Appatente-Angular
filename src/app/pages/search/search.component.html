@@ -1,0 +1,14 @@
+<ng-container>
+    <header>
+        <mat-toolbar color="primary">
+            <span>Busqueda</span>
+        </mat-toolbar>
+    </header>
+
+    <form [formGroup]="frmSearch" class="frmSearch">
+        <mat-form-field>
+            <mat-label>Buscar</mat-label>
+            <input matInput placeholder="Ingresa para buscar" formControlName="search">
+        </mat-form-field>
+    </form>
+</ng-container>
