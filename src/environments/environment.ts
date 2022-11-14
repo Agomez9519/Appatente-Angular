@@ -6,7 +6,12 @@
 export const environment = {
   production: false,
   api : 'https://es.wikipedia.org/w/api.php',
-  baseUrl:'http://localhost:3000/'
+  baseUrl:'http://localhost:3000/',
+  createUser:'http://localhost:3000/user',
+  multas: 'http://localhost:3000/multaxpatente',
+  vehiculo:'http://localhost:3000/vehiculo/',
+  vehiculos: 'http://localhost:3000/propietario/allcars/'
+
 };
 
 /*

@@ -1,0 +1,26 @@
+<div class="titulo">
+    <h1 class="titulo" style="text-align: center;">Buscar Datos Del Vehiculo</h1>
+</div>
+
+<!--
+<div class="frmBuscar">
+    <input  type="text" #search placeholder="Ingresa para buscar"><br><br>
+    <button mat-flat-button color="primary" (click)="getMultas(search.value)" >Buscar</button>
+</div>
+-->
+
+<div class="frmBuscar">
+<mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Patente</mat-label>
+    <input matInput type="text" [(ngModel)]="patente" #search placeholder="Ingrese patente" maxlength="6">
+    <button *ngIf="patente" matSuffix mat-icon-button aria-label="Clear" (click)="patente=''">    
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field><br>
+  <button mat-flat-button color="primary" (click)="getVehiculo(search.value)" >Buscar</button>
+</div><br>
+
+
+<ng-container class="container">
+    <app-card-v [cantProp]="cantProp" [propietarios]="propietarios"  [vehiculo]="vehiculo"></app-card-v>
+</ng-container>

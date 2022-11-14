@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>{{actionBtn}} Usuario</h1>
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <mat-form-field *ngIf="actionBtn=='Guardar'" appearance="outline">
+            <mat-label>Nombre del usuario</mat-label>
+            <input formControlName="username" matInput placeholder="Email">
+        </mat-form-field>
+
+        <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" placeholder="Password">
+        </mat-form-field>
+        </div>
+
+        <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo de usuario</mat-label>
+            <mat-select formControlName="role" >
+                <mat-option value="1">Administrador</mat-option>
+                <mat-option value="2">Usuario</mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+        
+        <div mat-dialog-action [align]="'end'">
+            <button mat-flat-button color="primary" *ngIf="actionBtn=='Guardar'; else actualizar" (click)="crearUsuario()" >{{actionBtn}}</button>
+            <ng-template #actualizar>
+                <button mat-flat-button color="primary" (click)="actualizarUsuario()">{{actionBtn}}</button>
+            </ng-template>
+            <button style="margin-left: 8px" mat-flat-button color="warn" mat-dialog-close>Cerrar</button>
+        </div>
+    </form>
+</div>

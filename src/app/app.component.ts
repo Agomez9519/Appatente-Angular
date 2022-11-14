@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth/services/auth.service';
 import { ArticlesI } from './interfaces/wiki';
-import { SearchService } from './services/search.service';
+import { SearchService } from './services/search/search.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,12 @@ import { SearchService } from './services/search.service';
 })
 export class AppComponent {
 
-  title = 'api-wiki';
+  title = 'Apptente';
   articles$!:Observable<ArticlesI[]>;
 
   constructor(
-    private searchSvc: SearchService
+    private searchSvc: SearchService,
+    private authSvc: AuthService
   ){ }
 
   onSearch(search:string){

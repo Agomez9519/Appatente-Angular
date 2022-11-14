@@ -1,1 +1,50 @@
 <h1 style="text-align: center;">Bienvenido a APPtente 1.0</h1>
+
+<ng-container>
+
+<mat-card class="example-card">
+    <mat-card-header>      
+      <mat-card-title>Datos del vehiculo</mat-card-title> 
+    </mat-card-header>
+    <img mat-card-image src="https://vcm.emol.com/wp-content/uploads/2017/12/congesti%C3%B3n-vehicular-produc-1.jpg" >
+    <mat-card-content>
+      <p>
+        Buscar datos de un vehiculo por su patente
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-list-item routerLink="/vehiculo" routerLinkActive="active"><button mat-flat-button color="primary">Ingresar</button></a>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card">
+    <mat-card-header>      
+      <mat-card-title>Buscador de multas</mat-card-title> 
+    </mat-card-header>
+    <img mat-card-image src="https://static.emol.cl/emol50/Fotos/2021/04/01/file_20210401101452.jpg" >
+    <mat-card-content>
+      <p>
+        Ingrese la patente y obtenga sus multas 
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-list-item routerLink="/multas" routerLinkActive="active"><button mat-flat-button color="primary">Ingresar</button></a>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="example-card">
+    <mat-card-header>      
+      <mat-card-title>Vehiculos por rut</mat-card-title> 
+    </mat-card-header>
+    <img mat-card-image src="https://media.elmostrador.cl/2022/04/A_UNO_1365046_9cd28-450x300.jpg" >
+    <mat-card-content>
+      <p>
+        Datos historicos de todos sus vehiculos
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-list-item routerLink="/allcarsxrut" routerLinkActive="active"><button mat-flat-button color="primary">Ingresar</button></a>
+    </mat-card-actions>
+  </mat-card>
+
+</ng-container>

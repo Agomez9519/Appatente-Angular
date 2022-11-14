@@ -1,0 +1,15 @@
+<ng-container class="example-card">
+    <mat-card>
+        <mat-card-title-group>
+        <mat-card-title>{{multa.juzgado.desc_juzgado}}</mat-card-title> 
+        <mat-card-subtitle *ngIf="multa.estaPagada; else nopagada" >Pagada: <mat-icon class="pagada">done</mat-icon></mat-card-subtitle>
+        <ng-template #nopagada>
+            <mat-card-subtitle >Pagada: <mat-icon class="nopagada">close</mat-icon></mat-card-subtitle>
+        </ng-template>
+        </mat-card-title-group>
+        <mat-card-content>
+            {{multa.descripcion}}<br><br>
+            Fecha: {{multa.createdAt.substring(0,10)}}<br>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

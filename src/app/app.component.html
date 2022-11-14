@@ -7,25 +7,24 @@
       <!-- Los routerlink realizaran el href a los distintos componentes 
       previamente seteados en el app-routing.modules.ts -->
       <a mat-list-item routerLink="/home" routerLinkActive="active">Home</a>
-      <a mat-list-item routerLink="/login" routerLinkActive="active">Login</a>
-      <a mat-list-item routerLink="/listar" routerLinkActive="active">Lista de Usuarios</a>
-      <a mat-list-item routerLink="/contact" routerLinkActive="active">Contact</a>
-      <a mat-list-item routerLink="/search" routerLinkActive="active">Buscar</a>
+      <a mat-list-item  routerLink="/listar" routerLinkActive="active">Lista de Usuarios</a>
+      <a mat-list-item routerLink="/vehiculo" routerLinkActive="active">Buscar Patente</a>
+      <a mat-list-item routerLink="/multas" routerLinkActive="active">Buscar Multas</a>
+      <a mat-list-item routerLink="/allcarsxrut" routerLinkActive="active">Buscar Vehiculos por rut</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
     <!-- declaramos el metodo onSearch creado en el ts search que 
-      activara el metodo onSearch con el event -->     
-      <router-outlet></router-outlet>
-      <!--
+      activara el metodo onSearch con el event -->
+    <router-outlet></router-outlet>
+    <!--
     <app-search (onSearch)="onSearch($event)"></app-search>
     <ng-container *ngFor="let article of articles$ | async">
       <app-articles [article]="article">
 
       </app-articles>
     </ng-container>-->
-    <app-footer></app-footer>
-  </mat-sidenav-content>   
+  </mat-sidenav-content>
 </mat-sidenav-container>
-
+<app-footer></app-footer>

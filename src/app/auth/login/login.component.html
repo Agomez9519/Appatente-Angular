@@ -18,8 +18,10 @@
                      <mat-error *ngIf="loginForm.get('password')?.errors">Password es requerido</mat-error>
                     </mat-form-field> 
                 <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Ingresar</button>
+
             </form>
+            
         </mat-card-content>     
-   
+        <button mat-raised-button color="warn" >Registrar con Google</button>
     </mat-card>
 </div>

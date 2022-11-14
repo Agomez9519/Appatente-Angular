@@ -16,6 +16,8 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule }  from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 
 const MATERIAL_MODULES =[
   HttpClientModule,
@@ -30,7 +32,9 @@ const MATERIAL_MODULES =[
   MatListModule,
   MatCardModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatDialogModule,
+  MatSelectModule
 ]
 
 @NgModule({

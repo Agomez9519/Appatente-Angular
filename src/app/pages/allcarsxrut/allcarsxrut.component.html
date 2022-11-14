@@ -1,0 +1,25 @@
+<div class="titulo">
+    <h1 class="titulo" style="text-align: center;">Buscar Vehiculos Por Rut</h1>
+</div>
+
+<!--
+<div class="frmBuscar">
+    <input  type="text" #search placeholder="Ingresa para buscar"><br><br>
+    <button mat-flat-button color="primary" (click)="getMultas(search.value)" >Buscar</button>
+</div>
+-->
+
+<div class="frmBuscar">
+    <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Rut</mat-label>
+        <input matInput type="text" [(ngModel)]="rut" #search placeholder="Ingrese rut" maxlength="10">
+        <button *ngIf="rut" matSuffix mat-icon-button aria-label="Clear" (click)="rut=''">    
+        <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field><br>
+    <button mat-flat-button color="primary" (click)="getVehiculos(search.value)" >Buscar</button>
+</div><br>
+
+<ng-container class="container">
+    <app-allcard *ngFor="let vehiculo of vehiculos" [vehiculo]="vehiculo"></app-allcard>
+</ng-container>

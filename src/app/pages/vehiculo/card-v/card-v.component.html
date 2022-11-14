@@ -1,0 +1,19 @@
+<ng-container class="example-card">
+    <mat-card *ngIf="vehiculo">
+        <mat-card-title-group>
+        <mat-card-title>Datos Del Vehiculo</mat-card-title> 
+        <mat-card-subtitle > </mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+            Patente: {{vehiculo.patente}}<br><br>
+            Marca: {{vehiculo.marca}}<br><br>
+            Modelo: {{vehiculo.modelo}}<br><br>
+            Año: {{vehiculo.anio}}<br><br>
+            Numero Motor: {{vehiculo.n_motor}}<br><br>
+            Numero Chasis: {{vehiculo.n_chasis}}<br><br>
+            Ultimo Dueño: {{propietarios[cantProp-1].desc_propietario}}<br><br>    
+            Cantidad de Propietarios: {{cantProp}}<br><br>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+

@@ -22,6 +22,18 @@ export class UsuariosService {
       })
     );
   }
+
+  update(user:UserI,username:string):Observable<UserResponseI | void>{
+    return this.http.patch<UserResponseI | void>(`${environment.baseUrl}user/${username}`,user).pipe(
+      map((res: UserResponseI) =>{
+        return res;
+      })
+    );
+  }
+  
+  crearUsuario(data: any):Observable<object>{
+    return this.http.post(environment.createUser,data);
+  }
+
 }
 
-``

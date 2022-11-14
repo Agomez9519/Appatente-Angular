@@ -30,6 +30,7 @@ export class AuthService {
         this.saveToken(user);
         this.loggedIn.next(true);
         this.saveEmail();
+        console.log(user);  
         return user;
       }
     ))
@@ -73,11 +74,9 @@ export class AuthService {
 
   //Guarda el email en el localStorage, decodificando el token y obteniendo el email sin signos
   saveEmail(){
-    const helper = new JwtHelperService();
-    const token = localStorage.getItem(this.TOKEN);
+    const helper = new JwtHelperService();   
     const decodedToken = helper.decodeToken(localStorage.getItem(this.TOKEN ));
     localStorage.setItem('email', JSON.stringify(decodedToken.username).replace(/['"]+/g, ''));
   }
 
-  
 }

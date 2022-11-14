@@ -11,7 +11,10 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 //Se Importa el modulo de Material para usarlo en el Modulo principal de Angular
 import { MaterialModule } from './modules/material/material.module';
 import { AuthInterceptorProvider } from './auth/interceptors/cookies.interceptor';
-import { ListarComponent } from './pages/listar/listar.component';
+import { UserFormComponent } from './pages/user-form/user-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 //Se importa el modulo de HttpClient para poder hacer peticiones HTTP
 
 
@@ -23,14 +26,17 @@ import { ListarComponent } from './pages/listar/listar.component';
     AppComponent,
     ArticlesComponent,
     FooterComponent,
-    ToolbarComponent,   
+    ToolbarComponent,    
+    UserFormComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
-
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

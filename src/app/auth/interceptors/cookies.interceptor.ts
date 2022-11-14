@@ -67,7 +67,7 @@ export class CookiesInterceptor implements HttpInterceptor {
         break;
 
         case 500:
-          console.log('Error al traer los tipos de propietarios');
+          console.log('Error al eliminar');
         break;
 
         case 501:
