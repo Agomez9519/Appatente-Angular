@@ -6,7 +6,8 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [AuthService]
 })
 export class LoginComponent implements OnInit {
   hide=true;
@@ -30,6 +31,17 @@ export class LoginComponent implements OnInit {
       
   }
 
+  async onLoginGoogle(){
+    try{
+      const res = await this.authSvc.loginGoogle();
+      if(res){
+        this.router.navigate(['./home']);
+      }
+    }catch(error){
+      console.log(error);
+    }
+  }
+
   //imprime los valores por consola
   onLogin(){
     console.log(this.loginForm.value);
@@ -38,7 +50,7 @@ export class LoginComponent implements OnInit {
       user => {
         console.log(user);
         if(user){
-          this.router.navigate(['/home']);
+          this.router.navigate(['./home'])
         }
       }, 
     )

@@ -13,6 +13,13 @@ import { MaterialModule } from './modules/material/material.module';
 import { AuthInterceptorProvider } from './auth/interceptors/cookies.interceptor';
 import { UserFormComponent } from './pages/user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 
 
 //Se importa el modulo de HttpClient para poder hacer peticiones HTTP
@@ -36,7 +43,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+   // provideFirebaseApp(() => initializeApp(environment.firebase)),
+   // provideAuth(() => getAuth()),
+    //provideFirestore(() => getFirestore()),
+    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

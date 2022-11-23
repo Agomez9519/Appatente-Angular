@@ -1,0 +1,16 @@
+<div class="titulo">
+  <h1 class="titulo" style="text-align: center;margin-top: 15px;">Buscador de Juzgados</h1>
+</div>
+
+
+<div class="container">
+  <form [formGroup]="formMapas" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <input type="text" #inputPlaces id="inputPlaces" formControlName="busqueda"> <br><br>
+
+
+      <div class="mapa" #divMap></div><br><br>
+    </mat-card>
+
+  </form>
+</div>

@@ -6,9 +6,13 @@
     <span class="exaple-spacer"></span>
 
     <!--Si esta logeado, se imprimira el email-->
-    <p class="email" *ngIf="isLoged|async;"> {{email}}</p>
+    <p class="email" *ngIf="isLoged | async; else noLoged"> {{email}}</p>
+    <ng-template #noLoged>           
+        <p class="email" > Login</p>
+    </ng-template>
 
-    <a *ngIf="isLoged|async; else viewLogout" mat-icon-button (click)="onLogout()">
+
+    <a *ngIf="isLoged | async; else viewLogout" mat-icon-button (click)="onLogout()">
         <mat-icon ><span class="material-symbols-outlined">logout</span></mat-icon>
     </a>
 

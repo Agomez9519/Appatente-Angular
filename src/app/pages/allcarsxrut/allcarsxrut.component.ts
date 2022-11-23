@@ -20,7 +20,8 @@ export class AllcarsxrutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getVehiculos(rut:string){
+  /*
+  etVehiculos(rut:string){
     if(validateRUT(rut)){
     this.propietarioSvc.getVehicules(rut).subscribe( res => {
       this.vehiculos = res;
@@ -29,6 +30,15 @@ export class AllcarsxrutComponent implements OnInit {
   }else{
     alert('RUT invalido');
   }
+  }
+   */
+
+  getVehiculos(rut:string){
+    this.propietarioSvc.getVehicules(rut).subscribe( res => {
+      this.vehiculos = res;
+      console.log(res)    })
+
+
   }
 
 }

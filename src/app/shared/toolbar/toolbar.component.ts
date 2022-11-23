@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  isLoged= this.authSvc.isLogged;
+  public isLoged= this.authSvc.isLogged;
 
   //importo el email desde el localStorage  
   email:string = "Bienvenido: " + localStorage.getItem('email');
